@@ -45,13 +45,28 @@ app.post('/signin', (req, res) => {
         res.send({
             token
         })
-        console.log(users);
     } else {
         res.status(403).send({
             message: "Invalid username or password"
         })
     }
+    console.log(users);
 });
+
+app.get("/me", (req,res) => {
+    const token = req.headers.authorization;
+    const user = users.find(user => user.token === token);
+    if (user) {
+        res.send({
+            username: user.username
+        })
+    } else {
+        res.status(401).send({
+            message: "Invalid token"
+        })
+    }
+});
+
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
