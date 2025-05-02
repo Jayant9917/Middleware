@@ -2,6 +2,26 @@
 // [1,2,3,4,5];
 // [2,4,6,8,10]
 
+// map => 
+
+const input = [1,2,3,4,5];
+
+
+function transfor(i){
+    return i * 2;
+}
+const ans = input.map(transfor);
+console.log(ans);
+
+
+/* const ans1 = input.map(function (i){
+    return i * 2;
+});
+console.log(ans);
+*/
+
+
+
 // .map() always returns a new array
 // It does not change the original array
 // You use it when you want to transform items

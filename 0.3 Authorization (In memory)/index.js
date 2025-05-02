@@ -54,7 +54,7 @@ app.post('/signin', (req, res) => {
 });
 
 app.get("/me", (req,res) => {
-    const token = req.headers.authorization;
+    const token = req.headers.token;
     const user = users.find(user => user.token === token);
     if (user) {
         res.send({

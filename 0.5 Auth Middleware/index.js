@@ -58,7 +58,7 @@ app.post("/signin",logger, function(req, res) {
         const token = jwt.sign({
             username: foundUser.username
         }, JWT_SECRET) ;   
-        res.header("jwt", token); // send the header to the client 
+        // res.header("jwt", token); // send the header to the client 
         // res.header("random", "jayant"); if i want to send header to the client
         foundUser.token = token;
         res.json({
